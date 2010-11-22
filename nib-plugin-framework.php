@@ -28,7 +28,11 @@ License: MIT
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
 */
+
 $libs = glob(dirname(__FILE__).'/libs/*.php');
 foreach($libs as $lib)	{
 	require_once($lib);
 }
+
+require_once(dirname(__FILE__).'/libs/base/NIB_Config.class.php');
+require_once(dirname(__FILE__).'/libs/base/NIB_Plugin.class.php');
