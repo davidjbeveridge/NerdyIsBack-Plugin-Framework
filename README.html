@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>NerdyIsBack Plugin Framework</title>
+</head>
+<body>
+<h1>NerdyIsBack Plugin Framework</h1>
+<p>The NerdyIsBack Plugin framework began as a collection of classes for managing
+custom post types, meta boxes, and taxonomies for WordPress.  When I realized I
+was using the same four classes in almost every WordPress project I developed, I
+decided it was time to DRY things up a little.  The NerdyIsBack Plugin Framework
+aims to build on the WordPress Plugin API (not replace it) and bring better support
+for object-oriented architecture to the plugin development process.
+</p>
+<h2>Objectives</h2>
+<ol>
+	<li>Ease object-oriented plugin development</li>
+	<li>Encourage separation of code</li>
+	<li>MVC implementation for WordPress administration panels</li>
+	<li>Ease the development process by providing classes for the following:
+		<ul>
+			<li>Custom Post Types</li>
+			<li>Custom Meta Boxes</li>
+			<li>Custom Taxonomies</li>
+			<li>Options Pages</li>
+		</ul>
+	</li>
+</ol>
+<h2>To do for version 0.4</h2>
+<ul>
+	<li><code>NIB_Plugin</code> base class: factory, instance manager, and base class for plugins</li>
+	<li>Models: empty class to be extended; changes to come in later versions?</li>
+	<li>Controllers implemented as command pattern</li>
+	<li>
+		Single point-of-entry for Controllers, factory method added to <code>NIB_Plugin</code>, implemented in <code>nib.php</code>
+		<ul>
+			<li>Add functions to tie <code>NIB_Controller</code>s to WordPress menu system through <code>nib.php</code></li>
+		</ul>
+	</li>
+</ul>
+<h2>To do in future release:</h2>
+<ul>
+	<li>
+		Refactor the following libraries and implement Factory object:
+		<ul>
+			<li><code>CustomPostType</code></li>
+			<li><code>CustomMetaBox</code></li>
+			<li><code>CustomTaxonomy</code></li>
+			<li><code>CustomOptionsPage</code></li>
+		</ul>
+	</li>
+	<li>Create HTMLElement Composite class (and children) with Presenter object for HTML representation.</li>
+	<li>Refactor <code>FormTablePresenter</code> to utilize <code>HTMLElement</code></li>
+</ul>
+</body>
+</html>
