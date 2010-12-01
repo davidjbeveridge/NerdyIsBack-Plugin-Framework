@@ -3,7 +3,7 @@
 Plugin Name: NerdyIsBack Plugin Framework
 Plugin URI: #
 Description: Shared libraries for other NerdyIsBack projects.  This plugin does nothing by itself, it just provides some classes for other plugins.
-Version: 0.3
+Version: 0.4
 Author: David Beveridge
 Author URI: http://www.nerdyisback.com
 License: MIT
@@ -29,10 +29,20 @@ License: MIT
 	THE SOFTWARE.
 */
 
-$libs = glob(dirname(__FILE__).'/libs/*.php');
-foreach($libs as $lib)	{
-	require_once($lib);
+// nib.php is necessary to implement the NerdyIsBack MVC Component.
+/**
+ * If your permissions are set tightly, WordPress won't be able to copy
+ * nib.php into the wp-admin/ directory; you will have to copy it manually
+ * for the NerdyIsBack Plugin Framework to operate properly.
+ */
+if(!file_exists(ABSPATH.'/wp-admin/nib.php'))	{
+	@copy(dirname(__FILE__).'/nib.php',ABSPATH.'/wp-admin/nib.php');
 }
 
-require_once(dirname(__FILE__).'/libs/base/NIB_Config.class.php');
-require_once(dirname(__FILE__).'/libs/base/NIB_Plugin.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_Exception.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_Controller.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_Model.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_View.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_CompositeView.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_WordPress_Menu.class.php');
+require_once(dirname(__FILE__).'/lib/base/NIB_Plugin.class.php');

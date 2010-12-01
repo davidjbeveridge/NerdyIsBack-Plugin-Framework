@@ -13,12 +13,6 @@ Objectives
     1. Ease object-oriented plugin development
     2. Encourage separation of code
     3. MVC implementation for WordPress administration panels
-    4. Ease the development process by providing classes for the
-       following:
-          + Custom Post Types
-          + Custom Meta Boxes
-          + Custom Taxonomies
-          + Options Pages
 
 To do for version 0.4
 
@@ -34,7 +28,7 @@ To do for version 0.4
 
 To do in future release:
 
-     * Refactor the following libraries and implement Factory object:
+     * Refactor the following libraries and implement a Factory object:
           + CustomPostType
           + CustomMetaBox
           + CustomTaxonomy
