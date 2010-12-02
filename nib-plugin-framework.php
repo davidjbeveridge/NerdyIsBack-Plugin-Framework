@@ -3,7 +3,7 @@
 Plugin Name: NerdyIsBack Plugin Framework
 Plugin URI: #
 Description: Shared libraries for other NerdyIsBack projects.  This plugin does nothing by itself, it just provides some classes for other plugins.
-Version: 0.4
+Version: 0.5
 Author: David Beveridge
 Author URI: http://www.nerdyisback.com
 License: MIT
@@ -39,6 +39,7 @@ if(!file_exists(ABSPATH.'/wp-admin/nib.php'))	{
 	@copy(dirname(__FILE__).'/nib.php',ABSPATH.'/wp-admin/nib.php');
 }
 
+// include plugin base:
 require_once(dirname(__FILE__).'/lib/base/NIB_Exception.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_Controller.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_Model.class.php');
@@ -46,3 +47,10 @@ require_once(dirname(__FILE__).'/lib/base/NIB_View.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_CompositeView.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_WordPress_Menu.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_Plugin.class.php');
+
+// include custom post types, meta boxes, taxonomies, etc.
+require_once(dirname(__FILE__).'/lib/FormTablePresenter.class.php');
+require_once(dirname(__FILE__).'/lib/CustomPostType.class.php');
+require_once(dirname(__FILE__).'/lib/CustomMetaBox.class.php');
+require_once(dirname(__FILE__).'/lib/CustomTaxonomy.class.php');
+require_once(dirname(__FILE__).'/lib/NIB_PostType.class.php');
