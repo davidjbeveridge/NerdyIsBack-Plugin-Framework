@@ -1,9 +1,7 @@
 <?php
-abstract class NIB_PostType	{
+abstract class NIB_PostType extends NIB_PropertiesWrapper	{
 	
 	protected $_typeObj;
-	protected $_metaBoxObjs;
-	protected $_taxonomyObjs;
 	
 	// You should specify the $_name in your child class
 	protected $_name;	// slug
@@ -37,19 +35,33 @@ abstract class NIB_PostType	{
 		$_edit_link = 'post.php?post=%d'
 	;
 	
-	private function getProperties()	{
-		$args = get_class_vars(get_called_class());
-
-		unset($args['_typeObj']);
-		unset($args['_metaBoxObjs']);
-		unset($args['_taxonomyObjs']);
-		unset($args['_name']);
-		
-		return $args;
+	public static function property($id)	{
+		global $post;
+		if(!is_null($post))	{
+			return get_post_meta($post->ID,$id,TRUE);
+		}
+		return null;
 	}
 	
 	public function __construct()	{
 		$this->_typeObj = new CustomPostType($this->_name,$this->getProperties());
 	}
 	
+	public function addTaxonomy($obj)	{
+		if($obj instanceof NIB_Taxonomy)	{
+			$this->_typeObj->addTaxonomy($obj->obj());
+		}
+		if($obj instanceof CustomTaxonomy)	{
+			$this->_typeObj->addTaxonomy($obj);
+		}
+	}
+	
+	public function addMetaBox($obj)	{
+		if($obj instanceof NIB_MetaBox)	{
+			$this->_typeObj->addMetaBox($obj->obj());
+		}
+		if($obj instanceof CustomMetaBox)	{
+			$this->_typeObj->addMetaBox($obj);
+		}
+	}
 }

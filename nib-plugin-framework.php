@@ -49,8 +49,13 @@ require_once(dirname(__FILE__).'/lib/base/NIB_WordPress_Menu.class.php');
 require_once(dirname(__FILE__).'/lib/base/NIB_Plugin.class.php');
 
 // include custom post types, meta boxes, taxonomies, etc.
-require_once(dirname(__FILE__).'/lib/FormTablePresenter.class.php');
-require_once(dirname(__FILE__).'/lib/CustomPostType.class.php');
-require_once(dirname(__FILE__).'/lib/CustomMetaBox.class.php');
-require_once(dirname(__FILE__).'/lib/CustomTaxonomy.class.php');
+require_once(dirname(__FILE__).'/lib/posttypes/FormTablePresenter.class.php');
+require_once(dirname(__FILE__).'/lib/posttypes/CustomPostType.class.php');
+require_once(dirname(__FILE__).'/lib/posttypes/CustomMetaBox.class.php');
+require_once(dirname(__FILE__).'/lib/posttypes/CustomTaxonomy.class.php');
+
+// include some wrapper classes:
+require_once(dirname(__FILE__).'/lib/NIB_PropertiesWrapper.class.php');
 require_once(dirname(__FILE__).'/lib/NIB_PostType.class.php');
+require_once(dirname(__FILE__).'/lib/NIB_Taxonomy.class.php');
+require_once(dirname(__FILE__).'/lib/NIB_MetaBox.class.php');
