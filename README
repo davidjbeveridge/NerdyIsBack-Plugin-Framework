@@ -1,4 +1,5 @@
                           NerdyIsBack Plugin Framework
+                              Current Version: 0.5
 
    The NerdyIsBack Plugin framework began as a collection of classes for
    managing custom post types, meta boxes, and taxonomies for WordPress.
@@ -14,25 +15,9 @@ Objectives
     2. Encourage separation of code
     3. MVC implementation for WordPress administration panels
 
-To do for version 0.4
 
-     * NIB_Plugin base class: factory, instance manager, and base class
-       for plugins
-     * Models: empty class to be extended; changes to come in later
-       versions?
-     * Controllers implemented as command pattern
-     * Single point-of-entry for Controllers, factory method added to
-       NIB_Plugin, implemented in nib.php
-          + Add functions to tie NIB_Controllers to WordPress menu system
-            through nib.php
-
-To do in future release:
-
-     * Refactor the following libraries and implement a Factory object:
-          + CustomPostType
-          + CustomMetaBox
-          + CustomTaxonomy
-          + CustomOptionsPage
+TODO for 0.6:
+     * Improve Documentation
      * Create HTMLElement Composite class (and children) with Presenter
        object for HTML representation.
      * Refactor FormTablePresenter to utilize HTMLElement
