@@ -15,6 +15,9 @@ Objectives
     2. Encourage separation of code
     3. MVC implementation for WordPress administration panels
 
+Writeup/Tutorial
+    The (limited) docs for the NIB Plugin Framework can be found at
+    http://www.nerdyisback.com/projects/nerdyisback-plugin-framework/
 
 TODO for 0.6:
      * Improve Documentation
