@@ -1,5 +1,6 @@
-                          NerdyIsBack Plugin Framework
-                              Current Version: 0.5
+NerdyIsBack Plugin Framework
+============================
+Current Version: 0.5
 
    The NerdyIsBack Plugin framework began as a collection of classes for
    managing custom post types, meta boxes, and taxonomies for WordPress.
