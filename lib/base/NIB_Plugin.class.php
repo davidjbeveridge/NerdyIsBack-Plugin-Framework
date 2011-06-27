@@ -58,6 +58,21 @@ abstract class NIB_Plugin	{
 		}
 		return null;
 	}
+	
+	/**
+	 * NIB_Plugin::__invoke
+	 *
+	 * Just aliases NIB_Plugin::instance() so the class can be invoked directly, eg.: 
+	 * 		NIB_Plugin('Plugin_ID','MyPlugin','/dir/to/plugin');
+	 * 
+	 * @param string $instance_id Unique identifier for this instance
+	 * @param string $class Name of the class you wish to instantiate
+	 * @return NIB_Plugin
+	 */
+	
+	public static final __invoke($instance_id,$class=null,$directory=null)	{
+		return NIB_Plugin::instance($instance_id, $class, $directory);
+	}
 
 	/**
 	 * Returns the local path to the plugin directory
