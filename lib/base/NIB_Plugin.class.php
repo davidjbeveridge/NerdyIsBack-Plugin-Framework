@@ -43,7 +43,7 @@ abstract class NIB_Plugin	{
 	 * @param string $class Name of the class you wish to instantiate
 	 * @return NIB_Plugin
 	 */
-	public static final function instance($instance_id,$class=null,$directory=null)	{
+	public final function instance($instance_id,$class=null,$directory=null)	{
 
 		if(empty($instance_id))	{
 			return null;
