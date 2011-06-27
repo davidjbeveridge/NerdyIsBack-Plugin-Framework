@@ -22,6 +22,7 @@ Writeup/Tutorial
 
 The (limited) docs for the NIB Plugin Framework can be found at
 [NerdyIsBack](http://www.nerdyisback.com/projects/nerdyisback-plugin-framework/)
+You should also checkout the [Tutorial Plugin](https://github.com/davidjbeveridge/NerdyIsBack-Plugin-Tutorial)
 
 TODO for 0.6:
 -------------
